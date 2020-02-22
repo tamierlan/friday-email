@@ -23,15 +23,24 @@ export default function Mail() {
     }
   }
 
-
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault()
-    const form = await axios.post('/api/form', {
+    axios.post('https://friday-email.herokuapp.com/email', {
       name,
       email,
       message
     })
-  }
+  };
+
+
+  // async function handleSubmit(e) {
+  //   e.preventDefault()
+  //   const form = await axios.post('/api/form', {
+  //     name,
+  //     email,
+  //     message
+  //   })
+  // }
 
 
   return (
